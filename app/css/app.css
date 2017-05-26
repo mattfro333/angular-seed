@@ -49,3 +49,7 @@
 .slide.ng-leave.ng-leave-active {
     opacity: 0;
 }
+.greeting, .greeting a{
+  color:#fff;
+  line-height: 30px;
+}

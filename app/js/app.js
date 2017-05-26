@@ -2,13 +2,14 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+var app = angular.module('myApp', [
   'ui.router',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
   'myApp.controllers',
-  'ngAnimate'
+  'ngAnimate',
+  'facebook'
 ]).
 config(['$stateProvider',
     function($stateProvider) {
@@ -28,4 +29,6 @@ config(['$stateProvider',
             controller: 'ProductDetailsCtrl'
         });
 }
-])
+]).config(['FacebookProvider',function(FacebookProvider){
+    FacebookProvider.init('<facebook app id>');
+}])

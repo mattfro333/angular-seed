@@ -3,7 +3,7 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
-  'ui-router',
+  'ui.router',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',

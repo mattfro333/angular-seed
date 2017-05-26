@@ -19,7 +19,7 @@ angular.module('myApp.controllers', [])
      ]
     }
   ])
-  .controller('ProductDetailsCtrl', ['$scope' "$stateParams", function($scope, $stateParams) {
+  .controller('ProductDetailsCtrl', ['$scope', '$stateParams', function($scope, $stateParams) {
           $scope.id = $stateParams.id;
           $scope.product = {
             'title': 'Kiddy Laptop',
@@ -27,4 +27,12 @@ angular.module('myApp.controllers', [])
             'price': 12,
             'userName': 'Sandy Peters'
           }
-  }]);
+  }
+])
+.controller('AppCtrl', ['$scope', 'categoryService',
+        function($scope, categoryService) {
+            $scope.categories = categoryService.getCategories();
+            $scope.user = {};
+            $scope.shoppingBasket = [ ];
+        }
+]);

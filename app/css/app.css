@@ -42,3 +42,10 @@
 .slide.ng-enter.ng-enter-active {
     left: 10%
 }
+.slide.ng-leave {
+    opacity: 0.5
+}
+
+.slide.ng-leave.ng-leave-active {
+    opacity: 0;
+}

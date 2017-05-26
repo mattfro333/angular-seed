@@ -1,0 +1,24 @@
+<h1>{{category}}</h1>
+<hr/>
+
+<div class="col-md-5">
+   <div class="row-fluid listing sidebar" >
+   <div class="listing" ng-repeat="product in productsListing">
+
+
+   <h2><a ng-href="#/{{category%20+'/'+product.product_id}}">{{product.title}}</a> </h2>
+
+   <h5>{{product.price |currency}}</h5>
+
+   <p><i>-by:{{product.userName}}</i></p>
+   </div>
+   </div>
+
+
+</div>
+</div>
+
+
+<div class="col-md-7">
+   <div class="slide" ui-view></div>
+</div>

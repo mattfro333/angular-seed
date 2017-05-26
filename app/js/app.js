@@ -30,5 +30,5 @@ config(['$stateProvider',
         });
 }
 ]).config(['FacebookProvider',function(FacebookProvider){
-    FacebookProvider.init('<facebook app id>');
+    FacebookProvider.init('<232573657241399>');
 }])

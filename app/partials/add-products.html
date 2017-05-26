@@ -31,3 +31,9 @@
     </div>
 
 </form>
+
+<img width="250" ng-src="{{uploadedPicURL}}">
+<div class="form-group">
+<label>Product Picture</label>
+<input class="form-control" type="file" accept="image/*" ng- model="newProduct.pic" onchange="angular.element(this).scope().uploadImage(this.files)">
+</div>

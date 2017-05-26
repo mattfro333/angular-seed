@@ -47,4 +47,33 @@ angular.module('myApp.controllers', []).controller('ProductsCtrl', ['$scope', '$
 
     });
         }
+]).controller('AddProductsCtrl', ['$scope', 'categoryService', 'authService', 'AWSservice',
+    function($scope, categoryService, authService, AWSservice) {
+
+        $scope.categories = categoryService.getCategories();
+
+        $scope.newProduct = {};
+
+
+        $scope.addProduct = function() {
+
+            $scope.newProduct.userId = $scope.user.id;
+            $scope.newProduct.userName = $scope.user.name;
+            $scope.newProduct.picUrl = 'sw3/someURL';
+AWSservice.saveProductData($scope.newProduct);
+
+        }
+
+
+    $scope.uploadImage = function(files) {
+    AWSservice.uploadPic(files).then(
+        function(data) {
+
+            $scope.newProduct.picUrl = data;
+            $scope.uploadedPicURL = "https://s3.amazonaws.com/garage-commerce/" + data;
+        }, function(err) {
+            $log.error(err);
+        })
+}
+}
 ]);

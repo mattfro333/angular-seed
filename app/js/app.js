@@ -28,6 +28,11 @@ config(['$stateProvider',
             templateUrl: 'partials/products.details.html',
             controller: 'ProductDetailsCtrl'
         });
+        $stateProvider.state('facebook', {
+          url:'/facebook',
+            templateUrl: 'facebook-check.html',
+            controller: 'AppCtrl'
+        })
 }
 ]).config(['FacebookProvider',function(FacebookProvider){
     FacebookProvider.init('<232573657241399>');

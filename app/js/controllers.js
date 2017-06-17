@@ -24,10 +24,15 @@ angular.module('myApp.controllers', []).controller('ProductsCtrl', ['$scope', '$
                 'title': 'Kiddy Laptop',
                 'description': 'lorem lipsum do re me.',
                 'price': 12,
-                'userName': 'Sandy Peters'
+                'userName': 'Sandy Peters'},
+                {
+                        product_id: '123',
+                        title: ' Baby Rattles',
+                        price: 2,
+                        userName: 'John Doe'
+                    }
 
-            }
-
+console.log($scope.product)
         }
     ])
 .controller('AppCtrl', ['$scope', 'categoryService', 'Facebook', 'authService',
@@ -35,13 +40,15 @@ angular.module('myApp.controllers', []).controller('ProductsCtrl', ['$scope', '$
             $scope.categories = categoryService.getCategories();
             $scope.user = {};
             $scope.shoppingBasket = [ ];
+            console.log($scope.user)
             Facebook.getLoginStatus(function(response) {
-
+console.log(response)
         if (response.status === 'connected') {
             authService.getUserInfo().then(function(data) {
                 $scope.user = data;
             });
         } else {
+
             Facebook.login();
         };
 
